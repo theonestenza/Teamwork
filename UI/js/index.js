@@ -25,5 +25,23 @@ function ShowChange(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
+
+// Dialog Box
+const dialogbox = (message) => { // Get the modal
+  const modal = document.querySelector('#dialogbox');
+
+  const divMsg = document.querySelector('.dialog-content-js');
+
+
+  divMsg.textContent = message;
+  // Display the modal
+  modal.style.display = 'block';
+};
+const closeDialog = () => {
+  document.querySelector('.modal').style.display = 'none';
+  const modal = document.querySelector('#dialogbox');
+  modal.style.display = 'none';
+};
+
                       
 
