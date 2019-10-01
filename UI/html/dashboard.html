@@ -26,25 +26,26 @@
         
         <div id="main">
           <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-          <img src="../img/icon.png" alt="Teamwork logo" class="logo">        
+          <img src="../img/ico.JPG" alt="Teamwork logo" class="logo">        
         </div>
         <nav id="main-nav" class="sideav">
             <div class="col span-1-of-3 logo-align">
-                <img src="../img/icon.png" alt="Teamwork logo" class="logo">
+                <img src="../img/ico.JPG" alt="Teamwork logo" class="logo"> 
             </div>
           <div class="social col span-2-of-3 " id="drop">
            <ul>
             <li><a href="index.html">Home</a></li>
             <li><a class="current" href="dashboard.html" id="">Dashboard </a></li>
+            <li><a href="articles.html">Articles</a></li>
             <li><a href="index.html">Log Out</a></li>
           </div>
-        </nav><br><br>
+        </nav><br><br><br>
       </div>
     <section>
       <div class="main-grid">
           <div class="left-main">
-              <button class="left-links active" onclick="ShowChange(event, 'Dashboard')" >Add article</button>
-              <button class="left-links" onclick="ShowChange(event, 'myart')">My articles</button>
+              <button class="left-links " onclick="ShowChange(event, 'Dashboard')" >Write article</button>
+              <button class="left-links active" onclick="ShowChange(event, 'myart')">My articles</button>
           </div>
           <div  class="top-container main-content" id="Dashboard"> 
             <section id="about"><br><br>
@@ -73,7 +74,7 @@
                               <label>&nbsp;</label>
                           </div>
                           <div class="col span-2-of-3">
-                        <a href="dashboard.html" class="btn btn-primary">Add</a>
+                        <a href="dashboard.html" class="btn btn-primary">Publish </a>
                               <!-- <input type="submit" value="Add" class="btn btn-primary"> -->
                           </div>
                       </div>
@@ -82,7 +83,6 @@
               </div>
             </section> 
           </div>
-        
       <div  class="top-container main-content" id="myart">
           <section id="home-articles"><br><br>
             <div class="container">
@@ -91,61 +91,61 @@
                   <div class="col span-1-of-3 home-art">
                     <div>
                       <figure class="profile">
-                          <img src="../img/articles/profile.png" alt="">
-                          <br> @Caroline<br><br>
+                          <img src="../img/customer-1.jpg" alt="">
+                          <br> @Martin<br><br>
                           <div class="">
                             <p>
-                            <button class="left-links active" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
-                            <button class="left-links active" onclick="ShowChange(event, 'myart')" ><i class="ion-android-delete"></i></button>
+                            <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
+                            <button class="left-links active no-color" onclick="dialogbox('Are you sure you want to delete this article?')" ><i class="ion-android-delete"></i></button>
                             </p>
                          </div>
                       </figure>
                     </div>
                     <div>
                           <h3>
-                            <a href="article.html">Article</a>
+                            <a href="article.html"><b>African got talent</b></a>
                           </h3>
                           <p>Lorem ipsum dolor sit amet consectetur ducimus optio ven
-                              iam sit nihil beatae  ...<br></p>
+                              iam sit nihil beatae...<br></p>
                     </div>
                   </div>
                   <div class="col span-1-of-3 home-art">
                       <div>
                         <figure class="profile">
-                            <img src="../img/articles/profile.png" alt="">
-                            <br> @Caroline<br><br>
+                            <img src="../img/customer-3.jpg" alt="">
+                            <br> @Bebeto<br><br>
                             <div class="">
                               <p>
-                              <button class="left-links active" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
-                              <button class="left-links active" onclick="ShowChange(event, 'myart')" ><i class="ion-android-delete"></i></button>
+                              <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
+                              <button class="left-links active no-color" onclick="dialogbox('Are you sure you want to delete this article?')"><i class="ion-android-delete"></i></button>
                               </p>
                            </div>
                         </figure>
                       </div>
                       <div>
                             <h3>
-                              <a href="article.html">Article</a>
+                              <a href="article.html"><b>England premier league</b></a>
                             </h3>
                             <p>Lorem ipsum dolor sit amet consectetur ducimus optio ven
-                                iam sit nihil beatae  ...<br></p>
+                                iam sit nihil beatae...<br></p>
                       </div>
                     </div>
                     <div class="col span-1-of-3 home-art">
                         <div>
                           <figure class="profile">
-                              <img src="../img/articles/profile.png" alt="">
+                              <img src="../img/customer-2.jpg" alt="">
                               <br> @Caroline<br><br>
                               <div class="">
                                 <p>
-                                <button class="left-links active" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
-                                <button class="left-links active" onclick="ShowChange(event, 'myart')" ><i class="ion-android-delete"></i></button>
+                                <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
+                                <button class="left-links active no-color" onclick="dialogbox('Are you sure you want to delete this article?')" ><i class="ion-android-delete"></i></button>
                                 </p>
                              </div>
                           </figure>
                         </div>
                         <div>
                               <h3>
-                                <a href="article.html">Article</a>
+                                <a href="article.html"><b>East African festval</b></a>
                               </h3>
                               <p>Lorem ipsum dolor sit amet consectetur ducimus optio ven
                                   iam sit nihil beatae  ...<br></p>
@@ -156,19 +156,19 @@
               <div class="col span-1-of-3 home-art">
                 <div>
                   <figure class="profile">
-                      <img src="../img/articles/profile.png" alt="">
+                      <img src="../img/customer-2.jpg" alt="">
                       <br> @Caroline<br><br>
                       <div class="">
                         <p>
-                        <button class="left-links active" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
-                        <button class="left-links active" onclick="ShowChange(event, 'myart')" ><i class="ion-android-delete"></i></button>
+                        <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
+                        <button class="left-links active no-color" onclick="dialogbox('Are you sure you want to delete this article?')" ><i class="ion-android-delete"></i></button>
                         </p>
                      </div>
                   </figure>
                 </div>
                 <div>
                       <h3>
-                        <a href="article.html">Article</a>
+                        <a href="article.html"><b>American got talent</b></a>
                       </h3>
                       <p>Lorem ipsum dolor sit amet consectetur ducimus optio ven
                           iam sit nihil beatae  ...<br></p>
@@ -177,19 +177,19 @@
               <div class="col span-1-of-3 home-art">
                   <div>
                     <figure class="profile">
-                        <img src="../img/articles/profile.png" alt="">
+                        <img src="../img/customer-2.jpg" alt="">
                         <br> @Caroline<br><br>
                         <div class="">
                           <p>
-                          <button class="left-links active" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
-                          <button class="left-links active" onclick="ShowChange(event, 'myart')" ><i class="ion-android-delete"></i></button>
+                          <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
+                          <button class="left-links active no-color" onclick="dialogbox('Are you sure you want to delete this article?')" ><i class="ion-android-delete"></i></button>
                           </p>
                        </div>
                     </figure>
                   </div>
                   <div>
                         <h3>
-                          <a href="article.html">Article</a>
+                          <a href="article.html"><b>Secret super star</b></a>
                         </h3>
                         <p>Lorem ipsum dolor sit amet consectetur ducimus optio ven
                             iam sit nihil beatae  ...<br></p>
@@ -198,19 +198,19 @@
                 <div class="col span-1-of-3 home-art">
                     <div>
                       <figure class="profile">
-                          <img src="../img/articles/profile.png" alt="">
-                          <br> @Caroline<br><br>
+                          <img src="../img/customer-1.jpg" alt="">
+                          <br> @Martin<br><br>
                           <div class="">
                             <p>
-                            <button class="left-links active" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
-                            <button class="left-links active" onclick="ShowChange(event, 'myart')" ><i class="ion-android-delete"></i></button>
+                            <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
+                            <button class="left-links active no-color" onclick="dialogbox('Are you sure you want to delete this article?')" ><i class="ion-android-delete"></i></button>
                             </p>
                          </div>
                       </figure>
                     </div>
                     <div>
                           <h3>
-                            <a href="article.html">Article</a>
+                            <a href="article.html"><b>East African festval</b></a>
                           </h3>
                           <p>Lorem ipsum dolor sit amet consectetur ducimus optio ven
                               iam sit nihil beatae  ...<br></p>
@@ -327,5 +327,22 @@
           </p>
       </div>
   </footer>
+  <div id="dialogbox" class="modal">
+      
+      <!-- Dialog content -->
+      <div class="modal-content">
+              <div class="modal-header">
+                      <span class="close" onclick="closeDialog()">&times;</span>
+                      <h3>TeamWork</h3>
+                    </div>
+                    <div class="modal-body">
+        <span class="dialog-content dialog-content-js"></span>
+      </div>
+      <div class="modal-buttons">
+          <input type="button" class="custom-margin btn btn-primary" value="No" onclick="closeDialog()"/>
+          <input type="button" class="custom-margin btn btn-primary" value="Yes" onclick="closeDialog()"/>
+      </div>
+      </div>
+    </div>
 </body>
 </html>
