@@ -35,7 +35,7 @@
     "nyc": "^14.1.1",
     "swagger-ui-dist": "^3.23.1",
     "swagger-ui-express": "^4.0.7",
-    "@babel/polyfill":"7.6.0",
+    "@babel/polyfill":"^7.6.0",
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
