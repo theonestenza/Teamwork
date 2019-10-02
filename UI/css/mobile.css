@@ -10,7 +10,7 @@
   margin-left: 5px;
   margin-right: 5px;
 }
-#showcase {border-top: 7px solid #3fb5a9;}
+#showcase {border-top: 7px solid #fff;}
 #main {
   display: block;
 }
@@ -20,8 +20,14 @@
 .left-main {
   width:100%;
 }
+#main-nav ul li #edge {
+  padding-right: 4px;
+}
 @media(max-width: 600px) {
   /* Stack Grid Items */
+  #main-nav ul li #edge {
+    padding-right: 4px;
+  }
   #main {
     display: block;
   }
@@ -52,6 +58,9 @@
 }
 /* Small phones to small tablets: from 481px to 767px ****/
 @media only screen and (max-width: 767px) {
+  #main-nav ul li #edge {
+    padding-right: 2px;
+  }
   .row,
   .col { 
       width: 100%;
@@ -66,16 +75,25 @@
 }
 /* Small phones: from 0 to 480px ****/
 @media only screen and (max-width: 480px) {
+  #main-nav ul li #edge {
+    padding-right: 4px;
+  }
   section { padding: 25px 0; }
   .contact-form {width: 100%; }
 }
 /* side navigation from 0 to 450px ****/
 @media screen and (max-height: 450px) {
+  #main-nav ul li #edge {
+    padding-right: 2px;
+  }
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
 /* dashboard and articles pagefrom 0 to 767px ****/
 @media (max-width: 767px){
+  #main-nav ul li #edge {
+    padding-right: 2px;
+  }
   .main-grid{
       display: grid;
       grid-template-columns: 1fr;

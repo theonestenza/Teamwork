@@ -20,8 +20,9 @@
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <a href="index.html">Home</a>
-          <a class="current" href="articles.html">Articles</a>
-          <a href="login.html">Log In</a>
+          <a href="dashboard.html" >My articles </a>
+          <a  href="articles.html">Articles</a>
+          <a href="login.html" class="current" >Log Out</a>
         </div>
         
         <div id="main">
@@ -35,53 +36,49 @@
           <div class="social col span-2-of-3 " id="drop">
            <ul>
             <li><a  href="index.html">Home</a></li>
-            <li><a class="current" href="articles.html">Articles</a></li>
-            <li><a href="login.html">Log In</a></li>
+            <li><a href="dashboard.html" id="">My articles </a></li>
+            <li><a  href="articles.html" id="edge">Articles</a></li>
+            <li><a href="login.html" class="current" >Log Out</a></li>
            </ul>
           </div>
         </nav><br><br>
       </div>
       <section>
-        <div class="main-grid">
-            <div class="left-main">
-                <button class="left-links active" onclick="ShowChange(event, 'myart')" ><a href="articles.html">Articles</a></button>
-            </div>
-            <div  class="top-container main-content" id="myart"> 
+       
+  <div  class="top-container main-content" id="myart"> 
   <section id="article">
     <div class="container">
       <div class="row">
         <div class="col span-1-of-4">
             <br><br>
-            <figure class="profile-article">
+            <figure class="profile-article comment">
                 <img src="../img/customer-1.jpg" alt="">
-                <br> @Caroline<br><br>
-                <div class="category">Sports</div>
+                <br> Martin<br><br>
+                <div class="category">Sports</div><br>
+                <small>
+                  <i class="fas fa-user"></i> Written By <cite>caroline</cite> , October 30, 2019
+                </small>
             </figure>
         </div>
       <div class="col span-2-of-4">
         <br><br>
             <div class="meta"> 
-              <h2>East African' got talent </h2>
+              <h2>Peace Hoziyana yasezerewe muri East Africa’s Got Talent </h2>
             </div>
-              <small>
-                <i class="fas fa-user"></i> Written By <cite>caroline</cite> , October 30, 2019
-              </small>
-
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore debit
-              is beatae ad doloremque voluptate, blanditiis suscipit error quam fug
-              it sapiente, aliquid quia libero incidunt recusandae enim voluptas
-               nulla sequi similique? Temporibus ad est minima magni molestias
-                obcaecati consequatur cumque exercitationem deleniti eos, animi
-                 facere recusandae, pariatur eveniet neque? Voluptatem, molestias.</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae d
-              ignissimos dolorum ipsam corporis similique! Quis, esse minus? Ducimu
-              s tempore provident sunt officia? Velit temporibus harum voluptate, ips
-              um quisquam rerum doloremque consectetur quos incidunt deleniti dicta e
-              xcepturi ratione, fugiat ad fuga in nam dolorum aut minus esse voluptat
-              um suscipit et quae. <br><p>Repellendus minus, ratione aperiam commodi volup
-              tas iusto aliquam sapiente. Aut obcaecati, corporio in perfere
-               ndis magnam blanditiis voluptatum placeat labore odio? Unde id dolore
-                aliquam, quas sit harum, saepe maiores facilis </p><br> </p>
+          <p>Umunyarwandakazi Peace Hoziyana yasezerewe mu irushanwa ry’abanyempano muri Afurika y’Iburasirazuba rizwi nka East Africa’s Got Talent, ririmo kubera i Nairobi muri Kenya<br>.
+<img src="../img/africa.jpg" alt="">
+            Ku nshuro ya mbere ribaye, u Rwanda ni kimwe mu bihugu byemerewe kuryitabira aho ruhatanye n’ibindi birimo Uganda, Tanzania na Kenya. Ryitabiriwe n’abanyempano batandukanye bo mu bihugu bigize<br> EAC, ariko 18 gusa ni bo bemerewe kujya muri ½, muri aba hakabamo bane baturutse mu Rwanda.
+            
+            Ku ikubitiro, mu bahatanye muri iki cyiciro abaturutse mu Rwanda barimo Elisha The Gift na Himbaza Drummers bahise basezererwa. Hari hasigayemo babiri aribo Itorero Intayoberana na Peace Hoziyana [wize umuziki ku Nyundo.]<br>
+            
+            Tariki 22 Nzeri 2019 nibwo Itorero Intayoberana ryatambutse imbere y’akanama nkemurampaka aho zanabashije kubona itike yo gukomeza mu cyiciro cya nyuma cy’irushanwa, mu gihe Peace Hoziyana we yasezerewe kuri iki Cyumweru tariki 29 Nzeri 2019.<br>
+            
+            Peace Hoziyana yanyuze imbere y’abagize akanama nkemurampaka ari uwa kabiri, afite iminota ibiri yo kwiyerekana cyane ko ariyo igenerwa buri wese muri iki cyiciro.
+            
+            
+            Peace Hoziyana ntabwo yahiriwe n'irushanwa
+            
+            Makeda niwe gusa wabashije kumutora </p><br> </p>
                 <a href="#">Comments&nbsp; &nbsp;<i class="ion-chatbubbles"></i>34 </a> </span></p>
            <br> <hr><br>
       </div>
@@ -89,14 +86,14 @@
           <div class="comment">
               <blockquote>
                 <img src="../img/customer-3.jpg" alt="Customer 3 photo">
-                <cite>@Theo</cite>
+                <cite>Theo</cite>
                 <p>Wow! for sure we like your daily posts</p>
              </blockquote>
             </div><hr>
             <div class="comment">
               <blockquote>
                 <img src="../img/customer-2.jpg" alt="Customer 3 photo">
-                <cite>@Kyla</cite>
+                <cite>Kyla</cite>
                 <p>Before i reach out this website,i was unable to discuss with freinds about any topic 
                   but nowadays it is very easier, live long teamwork
                 </blockquote>
@@ -104,7 +101,7 @@
             <div class="comment">
               <blockquote>
                 <img src="../img/customer-1.jpg" alt="Customer 3 photo">
-                <cite>@Lee</cite>
+                <cite>Lee</cite>
                 <p>I am from China, we reallyneed something like this in our country</p>
              </blockquote><hr>
              <textarea name="" id=""  placeholder="Comment please"></textarea>

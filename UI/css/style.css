@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #3fb5a9;
+  --primary-color: #1786e2;
   --light-color: #eee;
   --dark-color: #333;
   --max-width: 1100px;
@@ -63,7 +63,7 @@ h2 {
 h2:after {
   display: block;
   height: 2px;
-  background-color: #3fb5a9;
+  background-color: #1786e2;
   content: " ";
   width: 100px;
   margin: 0 auto;
@@ -138,13 +138,13 @@ h3 {
 /* Navigation */
 #main-nav .logo
  {
-  width: 100px;
+  width: 150px;
   height: auto;
   margin-left: 100px;
 }
 #main .logo
  {
-  width: 120px;
+  width: 150px;
   height:auto;
   float:right;
   margin-right:70px;
@@ -152,6 +152,9 @@ h3 {
 }
 .logo-align {
   text-align: left;
+}
+#main-nav ul li #edge {
+  padding-right: 400px;
 }
 #main-nav{
   position: fixed;
@@ -161,7 +164,7 @@ h3 {
   width: 100%;
   box-sizing: border-box;
   z-index: 1;
-  border-bottom: 7px solid #3fb5a9;
+  border-bottom: 7px solid #fff;
 }
 
 #main-nav ul {
@@ -173,8 +176,9 @@ h3 {
   padding: 8px;
 }
 #mySidenav .current ,
-#main-nav ul li a.current {
-  border: 2px solid #3fb5a9;
+#main-nav ul li a.current
+ {
+  background-color:#1786e2;
   border-radius: 0.5rem;
 }
 #main-nav .social {
@@ -204,13 +208,11 @@ h3 {
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 60vh;
 }
-
 #showcase .showcase-content {
   z-index: 1;
 }
-
 #showcase .showcase-content p {
   margin-bottom: 1rem;
 }
@@ -224,12 +226,12 @@ padding-left: 3rem;
 .profile {
   width: 70px;
   float:left;
-  color: #4ddbcd;
+  color: #1786e2;
 }
 .profile-article {
   width: 200px;
   float:left;
-  color: #4ddbcd;
+  color: #1786e2;
 }
 
 .works-step:last-of-type {
@@ -237,11 +239,11 @@ padding-left: 3rem;
 }
 
 .works-step div {
-  color: #3fb5a9;
+  color: #1786e2;
   font-size: 150%;
   height: 54px;
   width: 54px;
-  border: 2px solid #3fb5a9;
+  border: 2px solid #1786e2;
   border-radius: 50%;
   text-align: center;
   margin-right: 25px;
@@ -267,10 +269,10 @@ padding-left: 3rem;
 }
 
 .category {
-  background-color: #3fb5a9;
+  background-color: #1786e2;
 }
 .update {
-  background-color:#3fb5a9;
+  background-color:#1786e2;
   display: inline-block;
   color: #fff;
   font-size: 0.55rem;
@@ -327,8 +329,6 @@ footer {
   text-decoration: none;
   border: 0;
   color: #888;
-  -webkit-transition: color 0.2s;
-  transition: color 0.2s;
 }
 
 .footer-nav li a:hover,
@@ -338,7 +338,7 @@ footer {
 
 .social-links li a:link,
 .social-links li a:visited {
-  font-size: 160%;
+  font-size: 100%;
 }
 
 .ion-social-facebook,
@@ -362,14 +362,11 @@ footer {
 }
 
 .ion-social-instagram:hover {
-  color: #517fa4;
+  color: #1786e2;
 }
-
-
 footer p {
   color: #888;
   text-align: center;
-  margin-top: 20px;
 }
 .section-form {background: #eee;}
 
@@ -386,7 +383,7 @@ textarea {
   width: 100%;
   padding: 10px;
   border-radius: 3px;
-  border: 1px solid #3fb5a9;
+  border: 1px solid #1786e2;
 }
 textarea {
   height: 150px;
@@ -406,7 +403,7 @@ article */
   margin-left: 120px;
   margin-right: 120px;
 }
-cite{color:#3fb5a9;}
+cite{color:#1786e2;}
 .comment img {
   height: 50px;
   width: auto;
@@ -417,7 +414,7 @@ cite{color:#3fb5a9;}
 .read-more a:active,
 .read-more a:visited 
 {
-color: #3fb5a9;
+color: #1786e2;
 }
 .comment,
 .article-width  {
@@ -468,7 +465,7 @@ background-color: #ddebece8;
   background-color: #eee;
   overflow-x: hidden;
   transition: 0.4s;
-  border-bottom: 3px solid #3fb5a9;
+  border-bottom: 3px solid #1786e2;
 }
 .sidenav a {
   padding: 8px;
@@ -519,7 +516,7 @@ background-color: #ddebece8;
   width: 100%;
 }
 .left-main button.active{
-  background-color: #3fb5a9;
+  background-color: #1786e2;
 }
 .top-container{
   background-color: #eee;
@@ -540,7 +537,7 @@ background-color: #ddebece8;
   transition: background-color .3s;
 } 
 .user-page a.active {
-  background-color: #3fb5a9;
+  background-color: #1786e2;
   color: white;
 }
 .user-page a:hover {
@@ -577,7 +574,7 @@ background-color: #ddebece8;
  /* Modal Header */
  .modal-header {
   padding: 2px;
-  background-color: #3fb5a9;
+  background-color: #1786e2;
   color: white;
   text-align: center;
   border-radius: 10px  0px;

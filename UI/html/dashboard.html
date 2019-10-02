@@ -20,8 +20,9 @@
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <a href="index.html">Home</a>
-          <a class="current" href="dashboard.html" id="">Dashboard </a>  
-          <a href="index.html">Log Out</a>
+          <a href="#" onclick="ShowChange(event, 'Dashboard')">Write article </a>
+          <a href="articles.html">Articles</a>  
+          <a href="index.html" class="current"> Log Out</a>
         </div>
         
         <div id="main">
@@ -35,18 +36,14 @@
           <div class="social col span-2-of-3 " id="drop">
            <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a class="current" href="dashboard.html" id="">Dashboard </a></li>
-            <li><a href="articles.html">Articles</a></li>
-            <li><a href="index.html">Log Out</a></li>
+            <li><a href="#" onclick="ShowChange(event, 'Dashboard')">Write article </a></li>
+            <li><a href="articles.html"  id="edge" >Articles</a></li>
+            <li><a href="index.html" class="current">Log Out</a></li>
           </div>
         </nav><br><br><br>
       </div>
     <section>
-      <div class="main-grid">
-          <div class="left-main">
-              <button class="left-links " onclick="ShowChange(event, 'Dashboard')" >Write article</button>
-              <button class="left-links active" onclick="ShowChange(event, 'myart')">My articles</button>
-          </div>
+      <div class="">
           <div  class="top-container main-content" id="Dashboard"> 
             <section id="about"><br><br>
               <h2>Add article on Teamwork </h2>
@@ -86,13 +83,13 @@
       <div  class="top-container main-content" id="myart">
           <section id="home-articles"><br><br>
             <div class="container">
-             <h2>Articles</h2>
+             <h2>My published articles</h2>
               <div class="row">
                   <div class="col span-1-of-3 home-art">
                     <div>
-                      <figure class="profile">
+                      <figure class="profile comment">
                           <img src="../img/customer-1.jpg" alt="">
-                          <br> @Martin<br><br>
+                          <br> Martin<br><br>
                           <div class="">
                             <p>
                             <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
@@ -111,9 +108,9 @@
                   </div>
                   <div class="col span-1-of-3 home-art">
                       <div>
-                        <figure class="profile">
+                        <figure class="profile comment">
                             <img src="../img/customer-3.jpg" alt="">
-                            <br> @Bebeto<br><br>
+                            <br> Bebeto<br><br>
                             <div class="">
                               <p>
                               <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
@@ -132,9 +129,9 @@
                     </div>
                     <div class="col span-1-of-3 home-art">
                         <div>
-                          <figure class="profile">
+                          <figure class="profile comment">
                               <img src="../img/customer-2.jpg" alt="">
-                              <br> @Caroline<br><br>
+                              <br> Caroline<br><br>
                               <div class="">
                                 <p>
                                 <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
@@ -155,9 +152,9 @@
           <div class="row">
               <div class="col span-1-of-3 home-art">
                 <div>
-                  <figure class="profile">
+                  <figure class="profile comment">
                       <img src="../img/customer-2.jpg" alt="">
-                      <br> @Caroline<br><br>
+                      <br> Caroline<br><br>
                       <div class="">
                         <p>
                         <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
@@ -176,9 +173,9 @@
               </div>
               <div class="col span-1-of-3 home-art">
                   <div>
-                    <figure class="profile">
+                    <figure class="profile comment">
                         <img src="../img/customer-2.jpg" alt="">
-                        <br> @Caroline<br><br>
+                        <br> Caroline<br><br>
                         <div class="">
                           <p>
                           <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
@@ -197,9 +194,9 @@
                 </div>
                 <div class="col span-1-of-3 home-art">
                     <div>
-                      <figure class="profile">
+                      <figure class="profile comment">
                           <img src="../img/customer-1.jpg" alt="">
-                          <br> @Martin<br><br>
+                          <br> Martin<br><br>
                           <div class="">
                             <p>
                             <button class="left-links active no-color" onclick="ShowChange(event, 'edit')" ><i class="ion-edit">&nbsp; &nbsp;</i></button>
@@ -229,7 +226,7 @@
               <a href="#">6</a>
               <a href="#">&raquo;</a>
             </div> 
-        </section>  
+        </section> <br> <br>
   </div>
   <div  class="top-container main-content" id="edit"><br><br>
      <h2>Edit article  </h2>
