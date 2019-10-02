@@ -1,2 +1,13 @@
-service_name: travis-pro
-repo_token: ouQfVeuVrJEMx8iCEDSptXIf4HOZSM90P
+after_success: 
+  - "npm run coverage"
+cache: 
+  directories: 
+    - node_modules
+language: node_js
+node_js: 
+  - stable
+notifications: 
+  email: false
+script: 
+  - "npm run test"
+sudo: false
