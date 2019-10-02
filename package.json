@@ -35,7 +35,7 @@
     "nyc": "^14.1.1",
     "swagger-ui-dist": "^3.23.1",
     "swagger-ui-express": "^4.0.7",
-    "@babel/polyfill",
+    "@babel/polyfill":"7.6.0",
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
@@ -44,11 +44,6 @@
     
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/node": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.2.0",
