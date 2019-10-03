@@ -25,7 +25,7 @@
           <a href="index.html" class="current"> Log Out</a>
         </div>
         
-        <div id="main">
+        <!-- <div id="main">
           <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
           <img src="../img/ico.JPG" alt="Teamwork logo" class="logo">        
         </div>
@@ -37,10 +37,36 @@
            <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="#" onclick="ShowChange(event, 'Dashboard')">Write article </a></li>
-            <li><a href="articles.html"  id="edge" >Articles</a></li>
+            <li><a href="articles.html"  >Articles</a></li>
             <li><a href="index.html" class="current">Log Out</a></li>
           </div>
-        </nav><br><br><br>
+        </nav> -->
+        <div id="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+            <img src="../img/ico.JPG" alt="Teamwork logo" class="logo">        
+          </div>
+          <nav id="main-nav" class="sideav">
+              <div class="col span-1-of-3 logo-align">
+                  <img src="../img/ico.JPG" alt="Teamwork logo" class="logo">
+              </div>
+              <div class="row" id="main-nav" class="sideav">
+                  <div class="col span-1-of-3 logo-align">
+                      <img src="../img/ico.JPG" alt="Teamwork logo" class="logo">
+                  </div>
+                <div class="col span-1-of-3">
+                    <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="#" onclick="ShowChange(event, 'Dashboard')">Write article </a></li>
+                      <li><a href="articles.html"  >Articles</a></li>
+                    </ul>
+                </div>
+                <div class="col span-1-of-3">
+                    <a class="btn btn-primary to-right" href="index.html">Log Out</a>
+                </div>
+            </div>
+          </nav>
+
+        <br><br><br>
       </div>
     <section>
       <div class="">
@@ -297,6 +323,22 @@
         </section>
     </div>
   </section> 
+
+  <div id="dialogbox" class="modal ">
+    <div class="modal-content">
+            <div class="modal-header">
+                    <span class="close" onclick="closeDialog()">&times;</span>
+                    <h3>TeamWork</h3>
+           </div> 
+        <div class="modal-body">
+      <span class="dialog-content dialog-content-js"></span>
+    </div>
+    <div class="modal-buttons">
+        <input type="button" class="custom-margin btn btn-primary" value="No" onclick="closeDialog()"/>
+        <input type="button" class="custom-margin btn btn-primary" value="Yes" onclick="closeDialog()"/>
+    </div>
+    </div>
+  </div>
   <!-- Footer -->
   <footer>
       <div class="row">
@@ -324,22 +366,5 @@
           </p>
       </div>
   </footer>
-  <div id="dialogbox" class="modal">
-      
-      <!-- Dialog content -->
-      <div class="modal-content">
-              <div class="modal-header">
-                      <span class="close" onclick="closeDialog()">&times;</span>
-                      <h3>TeamWork</h3>
-                    </div>
-                    <div class="modal-body">
-        <span class="dialog-content dialog-content-js"></span>
-      </div>
-      <div class="modal-buttons">
-          <input type="button" class="custom-margin btn btn-primary" value="No" onclick="closeDialog()"/>
-          <input type="button" class="custom-margin btn btn-primary" value="Yes" onclick="closeDialog()"/>
-      </div>
-      </div>
-    </div>
 </body>
 </html>

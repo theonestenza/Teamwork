@@ -6,13 +6,7 @@ dotenv.config();
 
 class Comment {
   constructor() {
-    this.comments = [{
-      commentId: 1,
-      articleId: 1,
-      authorId: 1,
-      comment: 'very nice article',
-      createdOn: '09/21/2019 9:45:56',
-    }];
+    this.comments = [];
   }
 
     commentOnArticle = (res, comment, articleId, token) => {
@@ -52,7 +46,47 @@ class Comment {
         }
       }
       return result;
+    };
+    isCommentTheSame = (comment) => {
+      const foundComment = this.comments.find(a => a.comment === comment);
+      return foundComment;
     }
+    isCommentExist = commentId => this.comments.find(c => c.commentId === parseInt(commentId, 10));
+
+    isOwnerOfComment = (commentId, token, res) => {
+      const employeeId = this.getUserId(res, token);
+      
+      const comment = this.comments.find(
+        c => c.commentId === parseInt(commentId, 10)
+       && c.authorId === employeeId,
+      );
+      
+      return comment;
+    };
+    flag = (commentId) => {
+      const foundComment = this.comments.find(c => c.articleId === parseInt(commentId, 10));
+      foundComment.status= 'unappropriate';
+      return {
+        status: 200,
+        message: 'comment flagged successfully',
+      };
+    }
+
+    removeComment = (commentId) => {
+      const foundComment = this.comments.find(c => c.commentId === parseInt(commentId, 10));
+      if( foundComment.status= 'unappropriate'){
+        const index = this.comments.indexOf(foundComment);
+      this.comments.splice(index, 1);
+      return {
+        status: 200,
+        message: 'comment deleted successfully',
+      };
+      }
+      return {
+        status: 403,
+        message: 'comment is not yet flagged',
+      };
+    };
 }
 
 export default new Comment();

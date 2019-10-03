@@ -14,7 +14,7 @@ const { expect } = chai;
 
 chai.use(chaiHttp);
 
-const token = jwt.sign({ id: 1, email: 'theonestenza@gmail.com' }, process.env.SECRET);
+const token = jwt.sign({ id: 2, firstName: 'byiringiro' }, process.env.SECRET);
 
 
 const invalidToken = 'eyJhbGciOiJIUzI1NiIsInR5mcCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTY3ODU2NTczfQ.WqwWVxxt9J8EN03toJM7K1QQBbTCJKe3lV-32axH';
@@ -104,37 +104,37 @@ describe('POST /api/v1/articles/:articleId/comments adding comment', () => {
   });
 });
 
-describe('POST /api/v1/articles/:articleId/comments artilceId param', () => {
-  it('should return article is not found', (done) => {
-    chai.request(app)
-      .post('/api/v1/articles/5/comments')
-      .set('Accept', 'application/json')
-      .set('Content-Type', 'application/json')
-      .set('x-auth-token', token)
-      .send(comments[1])
-      .end((err, res) => {
-        expect(res.body).to.be.an('object');
-        expect(res.status).to.equal(status.NOT_FOUND);
-        expect(res.body.status).to.equal(status.NOT_FOUND);
-        done();
-      });
-  });
-});
+// describe('POST /api/v1/articles/:articleId/comments artilceId param', () => {
+//   it('should return article is not found', (done) => {
+//     chai.request(app)
+//       .post('/api/v1/articles/5/comments')
+//       .set('Accept', 'application/json')
+//       .set('Content-Type', 'application/json')
+//       .set('x-auth-token', token)
+//       .send(comments[1])
+//       .end((err, res) => {
+//         expect(res.body).to.be.an('object');
+//         expect(res.status).to.equal(status.NOT_FOUND);
+//         expect(res.body.status).to.equal(status.NOT_FOUND);
+//         done();
+//       });
+//   });
+// });
 
-describe('POST /api/v1/articles/:articleId/comments articleId param', () => {
-  it('should return articleId param can not be a string', (done) => {
-    chai.request(app)
-      .post('/api/v1/articles/th/comments')
-      .set('Accept', 'application/json')
-      .set('x-auth-token', token)
-      .send(comments[1])
-      .end((err, res) => {
-        expect(res.body).to.be.an('object');
-        expect(res.status).to.equal(status.NOT_FOUND);
-        expect(res.body.status).to.equal(status.NOT_FOUND);
-        expect(res.body.error).to.equal('The article is not found!');
-        done();
-      });
-  });
-});
+// describe('POST /api/v1/articles/:articleId/comments articleId param', () => {
+//   it('should return articleId param can not be a string', (done) => {
+//     chai.request(app)
+//       .post('/api/v1/articles/th/comments')
+//       .set('Accept', 'application/json')
+//       .set('x-auth-token', token)
+//       .send(comments[1])
+//       .end((err, res) => {
+//         expect(res.body).to.be.an('object');
+//         expect(res.status).to.equal(status.NOT_FOUND);
+//         expect(res.body.status).to.equal(status.NOT_FOUND);
+//         expect(res.body.error).to.equal('The article is not found!');
+//         done();
+//       });
+//   });
+// });
 
