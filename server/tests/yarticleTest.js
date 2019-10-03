@@ -14,35 +14,16 @@ const { expect } = chai;
 
 chai.use(chaiHttp);
 
-// const validToken = generateAuthToken(1);
-// const ownerToken = generateAuthToken(2);
 const noToken = ' ';
-// const noUserWithToken = generateAuthToken(89);
-
 
 const invalidToken = 'eyJhbGciOiJIUzI1NiIsInR5mcCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTY3ODU2NTczfQ.WqwWVxxt9J8EN03toJM7K1QQBbTCJKe3lV-32axH';
 
 
-const token = jwt.sign({ id: 1, email: 'theonestenza@gmail.com' }, process.env.SECRET);
-const invalidtoken = jwt.sign({ email: 'theonestenza@gmail.com' }, process.env.SECRET);
-const wrongToken = jwt.sign({ id: 0, email: 'theonestenza@gmail.com' }, process.env.SECRET);
-//  article test
+const token = jwt.sign({ id: 2, firstName: 'byiringiro' }, process.env.SECRET);
+const invalidtoken = jwt.sign({ firstName: 'theonestenza@gmail.com' }, process.env.SECRET);
+const wrongToken = jwt.sign({ id: 0, firstName: 'theonestenza@gmail.com' }, process.env.SECRET);
 
-describe('POST article created successfully, api/v1/articles', () => {
-  it('should return article', (done) => {
-    chai.request(app)
-      .post('/api/v1/articles')
-      .set('x-auth-token', token)
-      .set('Accept', 'application/json')
-      .send(articles[0])
-      .end((err, res) => {
-        expect(res.body).to.be.an('object');
-        expect(res.body.status).to.equal(status.RESOURCE_CREATED);
-        expect(res.body.message).to.equal('success');
-        done();
-      });
-  });
-});
+
 
 describe('POST article with no token provided, api/v1/articles', () => {
   it('should return error', (done) => {
@@ -58,6 +39,21 @@ describe('POST article with no token provided, api/v1/articles', () => {
       });
   });
 });
+describe('POST article created successfully, api/v1/articles', () => {
+  it('should return article', (done) => {
+    chai.request(app)
+      .post('/api/v1/articles')
+      .set('x-auth-token', token)
+      .set('Accept', 'application/json')
+      .send(articles[0])
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.body.status).to.equal(status.RESOURCE_CREATED);
+        expect(res.body.message).to.equal('Article created successfully');
+        done();
+      });
+  });
+});
 
 describe('GET specific  article, api/v1/articles/:id', () => {
   it('should return article', (done) => {
@@ -69,7 +65,7 @@ describe('GET specific  article, api/v1/articles/:id', () => {
       .end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.body.status).to.equal(status.REQUEST_SUCCEDED);
-        expect(res.body.message).to.equal('success');
+        expect(res.body.message).to.equal('Article retrieved successfully');
         done();
       });
   });
@@ -107,7 +103,6 @@ describe('POST article with no access , api/v1/articles', () => {
 });
 
 
-//000000000000000000000000000000000000000000000000000000000000000000000000000000000
 
 describe('POST creating an article with Invalid token , api/v1/articles', () => {
   it('should return an article failed', (done) => {
@@ -182,7 +177,7 @@ describe('GET Get all articles , api/v1/feeds', () => {
         expect(res.body).to.be.an('object');
         expect(res.status).to.equal(status.REQUEST_SUCCEDED);
         expect(res.body.status).to.equal(status.REQUEST_SUCCEDED);
-        expect(res.body.message).to.equal('success');
+        expect(res.body.message).to.equal('all articles retrieved successfully');
         done();
       });
   });
