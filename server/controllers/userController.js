@@ -7,11 +7,12 @@ class UserController {
         firstName: Joi.string().required(),
         lastName: Joi.string().required(),
         email: Joi.string().email().required(),
-        password: Joi.string().required(),
+        password: Joi.string().min(5).required(),
         gender: Joi.string().required(),
         jobRole: Joi.string().required(),
         department: Joi.string().required(),
         address: Joi.string().required(),
+        is_admin: Joi.boolean().default(false),
       };
       const result = Joi.validate(req.body, schema);
       if (result.error == null) {
