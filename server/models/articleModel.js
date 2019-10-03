@@ -22,10 +22,11 @@ class Article {
       let newArticle = {
         articleId: newId,
         authorId: this.getUserId(res, token),
-        authName: this.getUserName(res, token),
+        authorName: this.getUserName(res, token),
         title,
         article,
         createdOn: formatted,
+        status: 'appropriate'
       };
       this.articles.push(newArticle);
       newArticle = {
@@ -86,7 +87,7 @@ class Article {
       this.articles.splice(index, 1);
       return {
         status: 200,
-        message: 'article deleted successfully ',
+        message: 'article deleted successfully',
       };
     };
 
@@ -107,6 +108,7 @@ class Article {
       let {
         articleId,
         authorId,
+        authorName,
         title,
         article,
         createdOn,
@@ -115,6 +117,7 @@ class Article {
       let response = {
         articleId,
         authorId,
+        authorName,
         title,
         article,
         createdOn,
@@ -143,6 +146,32 @@ class Article {
       const foundArticle = this.articles.find(a => a.title === title);
       return foundArticle;
     }
+
+    flag = (articleId) => {
+      const foundArticle = this.articles.find(a => a.articleId === parseInt(articleId, 10));
+      foundArticle.status= 'unappropriate';
+      return {
+        status: 200,
+        message: 'article flagged successfully',
+      };
+    }
+
+    
+    removeArticle = (articleId) => {
+      const foundArticle = this.articles.find(a => a.articleId === parseInt(articleId, 10));
+      if(foundArticle.status= 'unappropriate'){
+        const index = this.articles.indexOf(foundArticle);
+      this.articles.splice(index, 1);
+      return {
+        status: 200,
+        message: 'article deleted successfully',
+      };
+      }
+      return {
+        status: 403,
+        message: 'article is not yet flagged',
+      };
+    };
 }
 
 export default new Article();

@@ -1,4 +1,5 @@
 import Joi from 'joi';
+import status, { NOT_FOUND } from '../helpers/StatusCode';
 import Article from '../models/articleModel';
 
 class ArticleController {
@@ -10,7 +11,7 @@ class ArticleController {
       const result = Joi.validate(req.body, schema);
       if (result.error == null) {
         if (Article.isTitleTheSame(req.body.title)) {
-          return res.status(404).send({ status: 409, error: 'Articles is already exist' });
+          return res.status(NOT_FOUND).send({ status: 409, error: 'Articles is already exist' });
         }
         const article = Article.create(res, req.body, req.header('x-auth-token'));
         return res.status(201).send(article);
@@ -99,6 +100,37 @@ class ArticleController {
       const article = Article.getArticleById(articleId);
       return res.status(200).send(article);
     };
+
+    flagArticle = (req, res) => {
+      let { articleId } = req.params;
+      if (!Article.isArticleExist(articleId)) {
+        return res.status(404).send({
+          status: 404,
+          error: 'Such article is not found!',
+        });
+      }
+      const token = req.header('x-auth-token');
+      if (!Article.isOwnerOfArticle(articleId, token, res)) {
+        return res.status(403).send({
+          status: 403,
+          error: 'you are not the owner of article',
+        });
+      }
+      const response = Article.flag(articleId);
+      return res.status(200).send(response);
+      
+    };
+    deleteFlaggedArticle = (req,res) =>{
+      let { articleId } = req.params;
+      if (!Article.isArticleExist(articleId)) {
+        return res.status(404).send({
+          status: 404,
+          error: 'Such article is not found!',
+        });
+      }
+      const response = Article.removeArticle(articleId);
+      return res.status(200).send(response);
+    }
 }
 
 export default ArticleController;
