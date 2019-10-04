@@ -6,7 +6,7 @@ import chaiHttp from 'chai-http';
 
 import app from '../index';
 
-import articles from '../models/articles';
+import articles from '../mocha-data/articles';
 
 import status from '../helpers/StatusCode';
 
@@ -213,3 +213,100 @@ describe('GET deleted article  , api/v1/articles/:articleId ', () => {
   });
 });
 
+
+describe('PATCH api/v1/articles/:articleId articleId param', () => {
+  it('should return articleId param can not be a string', (done) => {
+    chai.request(app)
+      .patch('/api/v1/articles/mm')
+      .set('Accept', 'application/json')
+      .send(articles[3])
+      .set('x-auth-token', token)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(status.BAD_REQUEST);
+        expect(res.body.status).to.equal(status.BAD_REQUEST);
+        expect(res.body.error).to.equal('Article can not be a string');
+        done();
+      });
+  });
+});
+
+describe('PATCH api/v1/articles/:articleId articleId param', () => {
+  it('should return articleId param is not found', (done) => {
+    chai.request(app)
+      .patch('/api/v1/articles/97')
+      .set('Accept', 'application/json')
+      .send(articles[3])
+      .set('x-auth-token', token)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(status.NOT_FOUND);
+        expect(res.body.status).to.equal(status.NOT_FOUND);
+        expect(res.body.error).to.equal('Such article is not found!');
+        done();
+      });
+  });
+});
+
+
+describe('PATCH api/v1/articles/:articleId article ', () => {
+  it('should return article successfully edited', (done) => {
+    chai.request(app)
+      .patch('/api/v1/articles/1')
+      .set('Accept', 'application/json')
+      .send(articles[3])
+      .set('x-auth-token', token)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(status.REQUEST_SUCCEDED);
+        expect(res.body.status).to.equal(status.REQUEST_SUCCEDED);
+        done();
+      });
+  });
+});
+
+describe('DELETE api/v1/articles/:articleId articleId param', () => {
+  it('should return articleId param can not be a string', (done) => {
+    chai.request(app)
+      .delete('/api/v1/articles/mm')
+      .set('Accept', 'application/json')
+      .set('x-auth-token', token)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(status.BAD_REQUEST);
+        expect(res.body.status).to.equal(status.BAD_REQUEST);
+        done();
+      });
+  });
+});
+
+describe('DELETE api/v1/articles/:articleId articleId param', () => {
+  it('should return articleId param is not found', (done) => {
+    chai.request(app)
+      .delete('/api/v1/articles/96')
+      .set('Accept', 'application/json')
+      .set('x-auth-token', token)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(status.NOT_FOUND);
+        expect(res.body.status).to.equal(status.NOT_FOUND);
+        expect(res.body.error).to.equal('Such article is not found!');
+        done();
+      });
+  });
+});
+
+describe('DELETE api/v1/articles/:articleId article ', () => {
+  it('should return article successfully deleted', (done) => {
+    chai.request(app)
+      .delete('/api/v1/articles/1')
+      .set('Accept', 'application/json')
+      .set('x-auth-token', token)
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(status.REQUEST_SUCCEDED);
+        expect(res.body.status).to.equal(status.REQUEST_SUCCEDED);
+        done();
+      });
+  });
+});

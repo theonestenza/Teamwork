@@ -8,6 +8,10 @@ const articles = [{
 {
 
 },
+{articleId: 4,
+  title: 'andela Bootcamp',
+  article: 'andela is the best company around the world',
+},
 ];
 export default articles;
 

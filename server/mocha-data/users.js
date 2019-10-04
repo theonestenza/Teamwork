@@ -1,18 +1,14 @@
 
-import faker from 'faker';
-
-const fakerMail = faker.internet.email();
-const fakerPassword = faker.internet.password();
 const users = [
 
   // Signup user
 
   // 0 user with incomplete information
   {
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    email: fakerMail,
-    password: fakerPassword,
+    firstName: 'byiringiro',
+    lastName: 'viateur',
+    email: 'bvikjlhja@gmail.com',
+    password: '12345',
   },
 
   // 1 user with no information
@@ -64,16 +60,16 @@ const users = [
   },
   // 6 user with incorrect information
   {
-    email: fakerMail,
+    email: 'bvikjlhja@gmail.com',
     password: 'fakerPassword',
   },
   // 7 user  with missing password
   {
-    email: fakerMail,
+    email: 'bvikjlhja@gmail.com',
   },
   // 8 user with incorrect information
   {
-    password: fakerPassword,
+    password: '12345',
   },
  // 9 User with invalid email 
  {
