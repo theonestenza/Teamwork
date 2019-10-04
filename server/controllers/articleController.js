@@ -5,8 +5,8 @@ import Article from '../models/articleModel';
 class ArticleController {
     createArticle = (req, res) => {
       const schema = {
-        title: Joi.string().required(),
-        article: Joi.string().required(),
+        title: Joi.string().min(3).required(),
+        article: Joi.string().min(3).required(),
       };
       const result = Joi.validate(req.body, schema);
       if (result.error == null) {
@@ -109,13 +109,13 @@ class ArticleController {
           error: 'Such article is not found!',
         });
       }
-      const token = req.header('x-auth-token');
-      if (!Article.isOwnerOfArticle(articleId, token, res)) {
-        return res.status(403).send({
-          status: 403,
-          error: 'you are not the owner of article',
-        });
-      }
+      // const token = req.header('x-auth-token');
+      // if (!Article.isOwnerOfArticle(articleId, token, res)) {
+      //   return res.status(403).send({
+      //     status: 403,
+      //     error: 'you are not the owner of article',
+      //   });
+      // }
       const response = Article.flag(articleId);
       return res.status(200).send(response);
       

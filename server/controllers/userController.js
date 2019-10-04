@@ -4,8 +4,8 @@ import User from '../models/userModel';
 class UserController {
     signUp = (req, res) => {
       const schema = {
-        firstName: Joi.string().required(),
-        lastName: Joi.string().required(),
+        firstName: Joi.string().min(3).required(),
+        lastName: Joi.string().min(3).required(),
         email: Joi.string().email().required(),
         password: Joi.string().min(5).required(),
         gender: Joi.string().required(),

@@ -5,7 +5,7 @@ import Article from '../models/articleModel';
 class CommentController {
    commentArticle = (req, res) => {
      const schema = {
-       comment: Joi.string().required(),
+       comment: Joi.string().min(3).required(),
      };
      const { articleId } = req.params;
      const result = Joi.validate(req.body, schema);
@@ -37,13 +37,13 @@ class CommentController {
         error: 'Such comment is not found!',
       });
     }
-    const token = req.header('x-auth-token');
-    if (!Comment.isOwnerOfComment(commentId, token, res)) {
-      return res.status(403).send({
-        status: 403,
-        error: 'you are not the owner of comment',
-      });
-    }
+    // const token = req.header('x-auth-token');
+    // if (!Comment.isOwnerOfComment(commentId, token, res)) {
+    //   return res.status(403).send({
+    //     status: 403,
+    //     error: 'you are not the owner of comment',
+    //   });
+    // }
     const response = Comment.flag(commentId);
     return res.status(200).send(response);
     
