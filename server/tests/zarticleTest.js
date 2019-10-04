@@ -168,10 +168,10 @@ describe('POST creating an article with no token , api/v1/articles', () => {
   });
 });
 
-describe('GET Get all articles , api/v1/feeds', () => {
+describe('GET Get all articles , api/v1/articles', () => {
   it('should return an array of All artiles ', (done) => {
     chai.request(app)
-      .get('/api/v1/feeds')
+      .get('/api/v1/articles')
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.body).to.be.an('object');
