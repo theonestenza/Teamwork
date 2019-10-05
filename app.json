@@ -1,0 +1,414 @@
+{
+  "swagger": "2.0",
+  "info": {
+   "description": "Teamwork is an internal social network for organizations’ employees.",
+   "version": "v1",
+   "title": "Teamwork APIs docs",
+   "termsOfService": "http://swagger.io/terms/",
+   "contact": {
+    "email": "theonestenza@gmail.com"
+   },
+   "license": {
+    "name": "ISC",
+    "url": ""
+   }
+  },
+  "host": "teamwork-61.herokuapp.com",
+  "basePath": "/api/v1",
+  "tags": [
+   {
+    "name": "User",
+    "description": "signin, login"
+   },
+   {
+    "name": "Article",
+    "description": "edit, delete and view an article"
+   },
+   {
+    "name": "Comment",
+    "description": "comment to the articles",
+    "externalDocs": {
+     "description": "Find out more",
+     "url": "https://github.com/theonestenza/Teamwork/tree"
+    }
+   }
+  ],
+  "schemes": [
+   "http"
+  ],
+  "paths": {
+   "/auth/signup": {
+    "post": {
+     "tags": [
+      "User"
+     ],
+     "summary": "create user account",
+     "description": "",
+     "operationId": "signup",
+     "consumes": [
+      "application/json",
+      "application/xml"
+     ],
+     "produces": [
+      "application/xml",
+      "application/json"
+     ],
+     "parameters": [
+      {
+       "in": "body",
+       "name": "body",
+       "description": "User info needed to create new account",
+       "required": true,
+       "schema": {
+        "$ref": "#/definitions/signup"
+       }
+      }
+     ],
+     "responses": {
+      "201": {
+       "description": "user created successfully"
+      },
+     "201": {
+       "description": "user logged successfully"
+      },
+      "400": {
+         "description": "/email/ is required"
+        },
+      "409": {
+       "description": "email is already taken!"
+      }
+     }
+    }
+   },
+   "/auth/signin": {
+    "post": {
+     "tags": [
+      "user"
+     ],
+     "summary": "signin user",
+     "description": "",
+     "operationId": "signin",
+     "consumes": [
+      "application/json",
+      "application/xml"
+     ],
+     "produces": [
+      "application/xml",
+      "application/json"
+     ],
+     "parameters": [
+      {
+       "in": "body",
+       "name": "body",
+       "description": "User info needed to create new account",
+       "required": true,
+       "schema": {
+        "$ref": "#/definitions/signin"
+       }
+      }
+     ],
+     "responses": {
+      "201": {
+       "description": "user created successfully"
+      },
+     "201": {
+       "description": "user logged successfully"
+      },
+      "400": {
+         "description": "/email/ is required"
+        },
+      "409": {
+       "description": "email is already taken!"
+      }
+     }
+    }
+   },
+   "/articles": {
+    "post": {
+     "tags": [
+      "Article"
+     ],
+     "summary": "User is able to post an article",
+     "description": "",
+     "operationId": "createArticle",
+     "produces": [
+      "application/xml",
+      "application/json"
+     ],
+     "parameters": [
+      {
+       "name": "x-auth-token",
+       "in": "header",
+       "type": "string",
+       "description": "provide the  header of API request"
+      },
+      {
+       "name": "Article details",
+       "in": "body",
+       "required": true,
+       "schema": {
+        "$ref": "#/definitions/article"
+       }
+      }
+     ],
+     "responses": {
+      "201": {
+       "description": "article successfully created"
+      },
+      "403": {
+       "description": "you are not the owner of an article"
+      }
+     }
+    }
+   },
+   "/feeds": {
+     "get": {
+      "tags": [
+       "Article"
+      ],
+      "summary": "Employee can view all articles",
+      "description": "",
+      "operationId": "ViewAllArticle",
+      "produces": [
+       "application/xml",
+       "application/json"
+      ],
+      "responses": {
+       "200": {
+        "description": "successfully"
+       }
+      }
+     }
+    },
+    "/articles/{articleId}": {
+     "get": {
+      "tags": [
+       "Article"
+      ],
+      "summary": "Employee can view a specific article",
+      "description": "",
+      "operationId": "ViewSpecificArticle",
+      "produces": [
+       "application/xml",
+       "application/json"
+      ],
+      "responses": {
+       "200": {
+        "description": "successfully"
+       },
+       "404": {
+         "description": "Such article is not found!"
+        }
+      },
+      "parameters": [
+         {
+          "name": "articleId",
+          "in": "path",
+          "description": "articleId",
+          "required": true,
+          "type": "integer"
+         }
+        ]
+     },
+     "patch": {
+         "tags": [
+          "Article"
+         ],
+         "summary": "Employee can edit his article",
+         "description": "",
+         "operationId": "editArticle",
+         "produces": [
+          "application/xml",
+          "application/json"
+         ],
+         "responses": {
+          "200": {
+           "description": "article successfully edited"
+          },
+          "404": {
+            "description": "Such article is not found!"
+           }
+         },
+         "parameters": [
+             {
+                 "name": "x-auth-token",
+                 "in": "header",
+                 "type": "string",
+                 "description": "The value to provide in the  header of API request"
+                },
+            {
+             "name": "articleId",
+             "in": "path",
+             "description": "articleId",
+             "required": true,
+             "type": "integer"
+            },
+            {
+             "name": "Article",
+             "in": "body",
+             "required": true,
+             "schema": {
+              "$ref": "#/definitions/article"
+             }
+            }
+           ]
+        },
+        "delete": {
+         "tags": [
+          "Article"
+         ],
+         "summary": "Employees can delete his article",
+         "description": "",
+         "operationId": "deleteArticle",
+         "produces": [
+          "application/xml",
+          "application/json"
+         ],
+         "responses": {
+          "200": {
+           "description": "article successfully edited"
+          },
+          "404": {
+            "description": "Such article is not found!"
+           }
+         },
+         "parameters": [
+             {
+                 "name": "x-auth-token",
+                 "in": "header",
+                 "type": "string",
+                 "description": "The value to provide in the  header of API request"
+                },
+            {
+             "name": "articleId",
+             "in": "path",
+             "description": "articleId",
+             "required": true,
+             "type": "integer"
+            }
+           ]
+        }
+       },
+ 
+ 
+  "/articles/{articleId}/comments": {
+     "post": {
+      "tags": [
+       "Comment"
+      ],
+      "summary": "Employee can comment on every article",
+      "description": "",
+      "operationId": "commentOnArticle",
+      "produces": [
+       "application/xml",
+       "application/json"
+      ],
+      "parameters": [
+       {
+        "name": "x-auth-token",
+        "in": "header",
+        "type": "string",
+        "description": "The value to provide in the  header of API request"
+       },
+       {
+         "name": "articleId",
+         "in": "path",
+         "description": "articleId",
+         "required": true,
+         "type": "integer"
+        },
+       {
+        "name": "Comment details",
+        "in": "body",
+        "required": true,
+        "schema": {
+         "$ref": "#/definitions/comment"
+        }
+       }
+      ],
+      "responses": {
+       "201": {
+        "description": "successfully"
+       },
+       "403": {
+        "description": "you are not the owner of an article"
+       }
+      }
+     }
+    }
+  },
+  "definitions": {
+   "signup": {
+    "type": "object",
+    "properties": {
+     "firstName": {
+      "type": "string"
+     },
+     "lastName": {
+      "type": "string"
+     },
+     "email": {
+      "type": "string"
+     },
+     "password": {
+      "type": "string"
+     },
+     "gender": {
+      "type": "string"
+     },
+     "jobRole": {
+         "type": "string"
+        },
+      "department": {
+         "type": "string"
+      },
+      "address": {
+         "type": "string"
+      }
+       
+    },
+    "xml": {
+     "name": "User Signup"
+    }
+   },
+   "signin": {
+    "type": "object",
+    "properties": {
+     "email": {
+      "type": "string"
+     },
+     "password": {
+      "type": "string"
+     }
+    },
+    "xml": {
+     "name": "User Signup"
+    }
+   },
+   "article": {
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string"
+     },
+     "article": {
+         "type": "string"
+        }
+    },
+    "xml": {
+     "name": "Article"
+    }
+   },
+   "comment": {
+    "type": "object",
+    "properties": {
+     "comment": {
+      "type": "string"
+     }
+    },
+    "xml": {
+     "name": "Comment"
+    }
+   }
+  }
+ }

@@ -7,7 +7,7 @@ import app from '../index';
 
 import status from '../helpers/StatusCode';
 
-import users from '../models/users';
+import users from '../mocha-data/users';
 
 const { expect } = chai;
 
@@ -51,7 +51,7 @@ describe('POST sign up successfully, api/v1/auth/signup', () => {
       .send(users[2])
       .end((err, res) => {
         expect(res.body).to.be.an('object');
-        expect(res.body.message).to.equal('success');
+        expect(res.body.message).to.equal('User created successfully');
         expect(res.body.status).to.equal(status.RESOURCE_CREATED);
         done();
       });
@@ -98,7 +98,7 @@ describe('POST sign in successful, api/v1/auth/signin', () => {
       .end((err, res) => {
         expect(res.body).to.be.an('object');
         expect(res.body.status).to.equal(status.REQUEST_SUCCEDED);
-        expect(res.body.message).to.equal('success');
+        expect(res.body.message).to.equal('User logged successfully');
         done();
       });
   });
@@ -163,3 +163,19 @@ describe('POST api/v1/auth/signin email is missing', () => {
       });
   });
 });
+
+describe('POST api/v1/auth/signup when no valid URL endpoint exist', () => {
+  it('should return such Uri does not exist on our server', (done) => {
+    chai.request(app)
+      .post('/')
+      .set('Accept', 'application/json')
+      .end((err, res) => {
+        expect(res.body).to.be.an('object');
+        expect(res.status).to.equal(status.NOT_FOUND);
+        expect(res.body.status).to.equal(status.NOT_FOUND);
+        expect(res.body.error).to.equal('Route is not found');
+        done();
+      });
+  });
+});
+
